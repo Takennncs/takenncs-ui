@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Guide · takenncsUI</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/custom.css">
+</head>
+<body>
+<div class="d-flex" id="wrapper">
+  <nav id="sidebar" class="bg-dark">
+    <div class="sidebar-header text-center text-white py-4">
+      <h4 class="mb-0"><i class="fas fa-code"></i> takenncsUI</h4>
+    </div>
+    <ul class="list-unstyled components">
+      <li><a href="../index.html"><i class="fas fa-home"></i> Dashboard</a></li>
+      <li><a href="guide.html"><i class="fas fa-book"></i> Guide</a></li>
+      <li><a href="components.html"><i class="fas fa-puzzle-piece"></i> Components</a></li>
+      <li><a href="forms.html"><i class="fas fa-edit"></i> Forms</a></li>
+      <li><a href="charts.html"><i class="fas fa-chart-bar"></i> Charts</a></li>
+      <li><a href="table.html"><i class="fas fa-table"></i> Tables</a></li>
+      <li><a href="profile.html"><i class="fas fa-user"></i> Profile</a></li>
+      <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+    </ul>
+    <div class="sidebar-footer text-center text-white py-3">
+      <small>© <span id="year"></span> takenncsUI</small>
+    </div>
+  </nav>
+  <div id="page-content-wrapper" class="w-100">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+      <button class="btn btn-primary" id="menu-toggle"><i class="fas fa-bars"></i></button>
+    </nav>
+    <div class="container-fluid p-4">
+      <h1>Complete Guide</h1>
+      <p class="lead">This is the <strong>takenncsUI</strong> admin guide with detailed instructions and examples.</p>
+      
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title"><i class="fas fa-palette text-primary"></i> Customization</h5>
+              <p class="card-text">Learn how to customize colors, layout and branding.</p>
+              <a href="#customization" class="btn btn-sm btn-outline-primary">View Section</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title"><i class="fas fa-file-alt text-success"></i> Adding Pages</h5>
+              <p class="card-text">Step-by-step guide to add new pages to your admin.</p>
+              <a href="#adding-pages" class="btn btn-sm btn-outline-success">View Section</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title"><i class="fas fa-code text-info"></i> Components</h5>
+              <p class="card-text">Explore available UI components and how to use them.</p>
+              <a href="components.html" class="btn btn-sm btn-outline-info">View Components</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card mb-4">
+        <div class="card-header">
+          <h4 id="customization">Customization Guide</h4>
+        </div>
+        <div class="card-body">
+          <h5>Colors</h5>
+          <p>Edit CSS variables in <code>assets/css/custom.css</code>:</p>
+          <pre><code>:root {
+  --sidebar-width: 250px;
+  --brand-color: #5b21b6;
+  --primary-color: #007bff;
+  --success-color: #28a745;
+  --warning-color: #ffc107;
+  --danger-color: #dc3545;
+  --body-bg: #f9fafb;
+}</code></pre>
+          
+          <h5 class="mt-4">Branding</h5>
+          <p>To change the logo and name, edit the sidebar header in each HTML file:</p>
+          <pre><code>&lt;div class="sidebar-header text-center text-white py-4"&gt;
+  &lt;h4 class="mb-0"&gt;&lt;i class="fas fa-code"&gt;&lt;/i&gt; Your Brand&lt;/h4&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+      </div>
+      
+      <div class="card mb-4">
+        <div class="card-header">
+          <h4 id="adding-pages">Adding New Pages</h4>
+        </div>
+        <div class="card-body">
+          <ol>
+            <li>Create a new HTML file in the <code>pages/</code> directory</li>
+            <li>Copy the basic structure from an existing page</li>
+            <li>Update the navigation menu in all pages to include your new page</li>
+            <li>Add your content in the main content area</li>
+          </ol>
+          
+          <h5>Example Page Structure</h5>
+          <pre><code>&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"&gt;
+  &lt;title&gt;New Page · takenncsUI&lt;/title&gt;
+  &lt;link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"&gt;
+  &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"&gt;
+  &lt;link rel="stylesheet" href="../assets/css/custom.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class="d-flex" id="wrapper"&gt;
+  &lt;!-- Sidebar --&gt;
+  &lt;nav id="sidebar" class="bg-dark"&gt;
+    &lt;!-- Navigation menu --&gt;
+  &lt;/nav&gt;
+  
+  &lt;div id="page-content-wrapper" class="w-100"&gt;
+    &lt;nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom"&gt;
+      &lt;button class="btn btn-primary" id="menu-toggle"&gt;&lt;i class="fas fa-bars"&gt;&lt;/i&gt;&lt;/button&gt;
+    &lt;/nav&gt;
+    
+    &lt;div class="container-fluid p-4"&gt;
+      &lt;!-- Your content here --&gt;
+      &lt;h1&gt;New Page&lt;/h1&gt;
+      &lt;p&gt;Your content goes here.&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;footer class="bg-light text-center py-3"&gt;
+      &lt;small&gt;Made with &lt;i class="fas fa-heart text-danger"&gt;&lt;/i&gt; · Built on &lt;strong&gt;takenncsUI&lt;/strong&gt;&lt;/small&gt;
+    &lt;/footer&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;script src="../assets/js/app.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          <h4>Frequently Asked Questions</h4>
+        </div>
+        <div class="card-body">
+          <h5>Can I rename takenncsUI?</h5>
+          <p>Yes! takenncsUI is MIT licensed, which means you can rename, modify, and redistribute it freely.</p>
+          
+          <h5>How do I change the sidebar width?</h5>
+          <p>Edit the <code>--sidebar-width</code> CSS variable in <code>assets/css/custom.css</code>.</p>
+          
+          <h5>Is this template responsive?</h5>
+          <p>Yes, takenncsUI is fully responsive and works on mobile, tablet, and desktop devices.</p>
+          
+          <h5>Can I use this for commercial projects?</h5>
+          <p>Yes, the MIT license allows commercial use without restrictions.</p>
+        </div>
+      </div>
+    </div>
+    <footer class="bg-light text-center py-3">
+      <small>Made with <i class="fas fa-heart text-danger"></i> · Built on <strong>takenncsUI</strong></small>
+    </footer>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

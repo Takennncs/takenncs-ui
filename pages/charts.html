@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Charts · takenncsUI</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/custom.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+</head>
+<body>
+<div class="d-flex" id="wrapper">
+  <nav id="sidebar" class="bg-dark">
+    <div class="sidebar-header text-center text-white py-4">
+      <h4 class="mb-0"><i class="fas fa-code"></i> takenncsUI</h4>
+    </div>
+    <ul class="list-unstyled components">
+      <li><a href="../index.html"><i class="fas fa-home"></i> Dashboard</a></li>
+      <li><a href="guide.html"><i class="fas fa-book"></i> Guide</a></li>
+      <li><a href="components.html"><i class="fas fa-puzzle-piece"></i> Components</a></li>
+      <li><a href="forms.html"><i class="fas fa-edit"></i> Forms</a></li>
+      <li><a href="charts.html"><i class="fas fa-chart-bar"></i> Charts</a></li>
+      <li><a href="table.html"><i class="fas fa-table"></i> Tables</a></li>
+      <li><a href="profile.html"><i class="fas fa-user"></i> Profile</a></li>
+      <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+    </ul>
+    <div class="sidebar-footer text-center text-white py-3">
+      <small>© <span id="year"></span> takenncsUI</small>
+    </div>
+  </nav>
+  <div id="page-content-wrapper" class="w-100">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+      <button class="btn btn-primary" id="menu-toggle"><i class="fas fa-bars"></i></button>
+    </nav>
+    <div class="container-fluid p-4">
+      <h1>Charts</h1>
+      <p class="lead">Interactive charts using Chart.js library.</p>
+      
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="card mb-4">
+            <div class="card-header">
+              <h4>Bar Chart</h4>
+            </div>
+            <div class="card-body">
+              <canvas id="barChart" width="400" height="200"></canvas>
+            </div>
+          </div>
+          
+          <div class="card mb-4">
+            <div class="card-header">
+              <h4>Line Chart</h4>
+            </div>
+            <div class="card-body">
+              <canvas id="lineChart" width="400" height="200"></canvas>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-6">
+          <div class="card mb-4">
+            <div class="card-header">
+              <h4>Pie Chart</h4>
+            </div>
+            <div class="card-body">
+              <canvas id="pieChart" width="400" height="200"></canvas>
+            </div>
+          </div>
+          
+          <div class="card">
+            <div class="card-header">
+              <h4>Doughnut Chart</h4>
+            </div>
+            <div class="card-body">
+              <canvas id="doughnutChart" width="400" height="200"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          <h4>Chart.js Integration Guide</h4>
+        </div>
+        <div class="card-body">
+          <h5>How to add charts to your pages</h5>
+          <ol>
+            <li>Include Chart.js in your page: <code>&lt;script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"&gt;&lt;/script&gt;</code></li>
+            <li>Add a canvas element: <code>&lt;canvas id="myChart" width="400" height="200"&gt;&lt;/canvas&gt;</code></li>
+            <li>Initialize the chart with JavaScript</li>
+          </ol>
+          
+          <h5>Example Code</h5>
+          <pre><code>var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+    datasets: [{
+      label: '# of Votes',
+      data: [12, 19, 3, 5, 2, 3],
+      backgroundColor: 'rgba(54, 162, 235, 0.2)',
+      borderColor: 'rgba(54, 162, 235, 1)',
+      borderWidth: 1
+    }]
+  },
+  options: {
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero: true
+        }
+      }]
+    }
+  }
+});</code></pre>
+        </div>
+      </div>
+    </div>
+    <footer class="bg-light text-center py-3">
+      <small>Made with <i class="fas fa-heart text-danger"></i> · Built on <strong>takenncsUI</strong></small>
+    </footer>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="../assets/js/app.js"></script>
+<script>
+
+var barCtx = document.getElementById('barChart').getContext('2d');
+var barChart = new Chart(barCtx, {
+  type: 'bar',
+  data: {
+    labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+    datasets: [{
+      label: 'Revenue',
+      data: [12000, 19000, 15000, 25000, 22000, 30000],
+      backgroundColor: 'rgba(54, 162, 235, 0.2)',
+      borderColor: 'rgba(54, 162, 235, 1)',
+      borderWidth: 1
+    }]
+  },
+  options: {
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero: true,
+          callback: function(value) {
+            return '$' + value.toLocaleString();
+          }
+        }
+      }]
+    }
+  }
+});
+
+var lineCtx = document.getElementById('lineChart').getContext('2d');
+var lineChart = new Chart(lineCtx, {
+  type: 'line',
+  data: {
+    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+    datasets: [{
+      label: 'Users',
+      data: [100, 150, 180, 210, 250, 300],
+      backgroundColor: 'rgba(75, 192, 192, 0.2)',
+      borderColor: 'rgba(75, 192, 192, 1)',
+      borderWidth: 2,
+      fill: true
+    }]
+  },
+  options: {
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero: true
+        }
+      }]
+    }
+  }
+});
+
+var pieCtx = document.getElementById('pieChart').getContext('2d');
+var pieChart = new Chart(pieCtx, {
+  type: 'pie',
+  data: {
+    labels: ['Desktop', 'Mobile', 'Tablet'],
+    datasets: [{
+      data: [60, 30, 10],
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.7)',
+        'rgba(54, 162, 235, 0.7)',
+        'rgba(255, 206, 86, 0.7)'
+      ],
+      borderColor: [
+        'rgba(255, 99, 132, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgga(255, 206, 86, 1)'
+      ],
+      borderWidth: 1
+    }]
+  }
+});
+
+var doughnutCtx = document.getElementById('doughnutChart').getContext('2d');
+var doughnutChart = new Chart(doughnutCtx, {
+  type: 'doughnut',
+  data: {
+    labels: ['Chrome', 'Firefox', 'Safari', 'Edge', 'Other'],
+    datasets: [{
+      data: [65, 15, 10, 5, 5],
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.7)',
+        'rgba(54, 162, 235, 0.7)',
+        'rgba(255, 206, 86, 0.7)',
+        'rgba(75, 192, 192, 0.7)',
+        'rgba(153, 102, 255, 0.7)'
+      ],
+      borderColor: [
+        'rgba(255, 99, 132, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)'
+      ],
+      borderWidth: 1
+    }]
+  }
+});
+</script>
+</body>
+</html>
